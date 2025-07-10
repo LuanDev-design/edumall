@@ -7,7 +7,7 @@ export const mockProducts: Product[] = [
     description: "Học React từ con số 0 đến làm được dự án.",
     longDescription:
       "Khóa học React cơ bản sẽ giúp bạn nắm vững kiến thức nền tảng về React, bao gồm component, props, state, useEffect và JSX. Bạn sẽ thực hành thông qua các bài tập thực tế và xây dựng một dự án web đơn giản hoàn chỉnh.",
-    price: "499.000₫",
+    price: "199.000₫",
     image: "/images/khoa-hoc-react.png",
     rating: 4.8,
   },
@@ -81,5 +81,15 @@ export const mockProducts: Product[] = [
     image: "/images/Englishonl4.png",
     rating: 4.2,
   },
+  {
+  id: 9,
+  name: "Lập Trình Web Fullstack Với MERN",
+  description: "Học từ frontend đến backend với MongoDB, Express, React và Node.js.",
+  longDescription:
+    "Khóa học Fullstack MERN giúp bạn trở thành lập trình viên toàn diện. Bạn sẽ được học cách xây dựng ứng dụng web hoàn chỉnh từ frontend (React) đến backend (Node.js, Express) và cơ sở dữ liệu MongoDB. Bao gồm triển khai thực tế, xác thực người dùng, REST API, JWT và deploy lên Vercel/Render.",
+  price: "999.000₫",
+  image: "/images/mern-fullstack.png",
+  rating: 4.9,
+}
 ];
 
