@@ -1,6 +1,6 @@
 "use client";
 
-import { FiSearch, FiHeart } from "react-icons/fi";
+import { FiSearch } from "react-icons/fi";
 import ThemeToggle from "./ThemeToggle";
 import Link from "next/link";
 
@@ -28,10 +28,10 @@ export default function Header({ searchTerm, setSearchTerm }: HeaderProps) {
       <div className="flex items-center gap-4">
         <ThemeToggle />
         <Link href="/favorites">
-  <div className="text-sm font-medium cursor-pointer text-gray-700 dark:text-white hover:text-blue-600 transition">
-    ❤️ Yêu thích
-  </div>
-</Link>
+          <div className="text-sm font-medium cursor-pointer text-gray-700 dark:text-white hover:text-blue-600 transition">
+            ❤️ Yêu thích
+          </div>
+        </Link>
       </div>
     </header>
   );

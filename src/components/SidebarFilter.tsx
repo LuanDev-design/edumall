@@ -1,4 +1,4 @@
-import { FaHeart, FaFilter } from "react-icons/fa";
+import {  FaFilter } from "react-icons/fa";
 
 interface Props {
     priceFilter: string;
