@@ -90,6 +90,37 @@ export const mockProducts: Product[] = [
   price: "999.000₫",
   image: "/images/mern-fullstack.png",
   rating: 4.9,
+},
+{
+  id: 10,
+  name: "Khóa Học Next.js 14 Toàn Tập",
+  description: "Tạo ứng dụng web hiện đại với App Router & Server Actions.",
+  longDescription:
+    "Khóa học giúp bạn nắm vững kiến thức mới nhất về Next.js 14, bao gồm App Router, Server Actions, Routing động, SSR, ISR và tối ưu hiệu suất. Bạn sẽ xây dựng một project thực tế tích hợp API và CMS.",
+  price: "799.000₫",
+  image: "/images/nextjs14.png",
+  rating: 4.8,
+},
+{
+  id: 11,
+  name: "Kỹ Năng Thuyết Trình Tự Tin",
+  description: "Chinh phục sân khấu, truyền tải ý tưởng hiệu quả.",
+  longDescription:
+    "Khóa học rèn luyện kỹ năng trình bày, kiểm soát giọng nói, ngôn ngữ cơ thể và quản lý sự lo lắng. Phù hợp cho học sinh, sinh viên và người đi làm muốn cải thiện khả năng giao tiếp trước đám đông.",
+  price: "349.000₫",
+  image: "/images/thuyettrinh.png",
+  rating: 4.5,
+},
+{
+  id: 12,
+  name: "Thiết Kế Portfolio Cá Nhân Bằng HTML/CSS",
+  description: "Xây dựng trang cá nhân ấn tượng cho CV hoặc showcase.",
+  longDescription:
+    "Khóa học giúp bạn tự thiết kế và code một trang portfolio hiện đại bằng HTML5 và CSS3 (có thêm responsive). Bao gồm cả hiệu ứng cuộn mượt, animation cơ bản và best practice về UI/UX dành cho developer.",
+  price: "199.000₫",
+  image: "/images/portfolio-html-css.png",
+  rating: 4.6,
 }
+
 ];
 
