@@ -5,5 +5,6 @@ export interface Product {
   longDescription: string;
   price: string;
   image: string;
-  rating: number; 
+  rating: number;
+  views?: number; // thêm thuộc tính này
 }

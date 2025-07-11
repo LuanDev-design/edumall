@@ -8,6 +8,8 @@ import Header from "@/components/Header";
 import SidebarFilter from "@/components/SidebarFilter";
 import ProductCard from "@/components/ProductCard";
 import Banner from "@/components/Banner";
+import SuggestedProducts from "@/components/SuggestedProducts";
+
 
 export default function HomePage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -61,6 +63,10 @@ export default function HomePage() {
       {selectedProduct && (
         <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
       )}
+         <SuggestedProducts onSelectProduct={(product) => setSelectedProduct(product)} />
+
     </div>
+
+    
   );
 }
