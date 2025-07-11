@@ -1,26 +1,95 @@
-import Image from "next/image";
-import { Product } from "@/types/product";
+// 1. src/components/ProductCard.tsx
+"use client";
 
-interface Props {
+import { useEffect, useState } from "react";
+import { Product } from "@/types/product";
+import Image from "next/image";
+
+interface ProductCardProps {
   product: Product;
+  onClick: () => void;
 }
 
-export default function ProductCard({ product }: Props) {
+export default function ProductCard({ product, onClick }: ProductCardProps) {
+  const [views, setViews] = useState(0);
+  const [liked, setLiked] = useState(false);
+
+  useEffect(() => {
+    const viewsMap = JSON.parse(localStorage.getItem("productViews") || "{}");
+    setViews(viewsMap[product.id] || 0);
+
+    const likedList = JSON.parse(localStorage.getItem("likedProducts") || "[]");
+    setLiked(likedList.includes(product.id));
+  }, [product.id]);
+
+  const handleView = () => {
+    const viewed = JSON.parse(localStorage.getItem("viewedProducts") || "[]");
+    if (!viewed.includes(product.id)) {
+      viewed.push(product.id);
+      localStorage.setItem("viewedProducts", JSON.stringify(viewed));
+    }
+
+    const viewsMap = JSON.parse(localStorage.getItem("productViews") || "{}");
+    viewsMap[product.id] = (viewsMap[product.id] || 0) + 1;
+    localStorage.setItem("productViews", JSON.stringify(viewsMap));
+    setViews(viewsMap[product.id]);
+
+    onClick();
+  };
+
+  const toggleLike = () => {
+    const likedList = JSON.parse(localStorage.getItem("likedProducts") || "[]");
+    const updatedList = liked
+      ? likedList.filter((id: number) => id !== product.id)
+      : [...likedList, product.id];
+    localStorage.setItem("likedProducts", JSON.stringify(updatedList));
+    setLiked(!liked);
+  };
+
   return (
-    <div className="p-4 border rounded-lg shadow-sm hover:shadow-md transition bg-white dark:bg-neutral-900">
-      <Image
-        src={product.image}
-        alt={product.name}
-        width={300}
-        height={160}
-        className="w-full h-40 object-cover rounded-md mb-4"
-      />
-      <h2 className="text-lg font-semibold">{product.name}</h2>
-      <p className="text-sm text-gray-600 dark:text-gray-300">{product.description}</p>
-      <p className="text-blue-600 font-bold mt-2">{product.price}</p>
-      <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-        Xem chi tiết
-      </button>
+    <div className="relative w-full bg-white dark:bg-neutral-800 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 hover:border-blue-500 border border-transparent transition-all duration-300">
+      <div className="relative w-full h-40">
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          className="object-cover rounded-t-lg"
+        />
+        <button
+          onClick={toggleLike}
+          className="absolute top-2 right-2 z-10 bg-white dark:bg-neutral-800 p-1 rounded-full shadow hover:scale-110 transition"
+          title={liked ? "Bỏ yêu thích" : "Yêu thích"}
+        >
+          {liked ? "❤️" : "💕"}
+        </button>
+      </div>
+
+      <div className="p-4 space-y-2">
+        <div className="flex justify-between items-center">
+          <h3 className="font-bold text-gray-800 dark:text-white text-lg line-clamp-1">
+            {product.name}
+          </h3>
+          <span className="text-black font-bold dark:text-gray-200 text-sm">
+            {product.price}
+          </span>
+        </div>
+
+        <p className="text-gray-500 dark:text-gray-400 text-sm line-clamp-2">
+          {product.description}
+        </p>
+        <p className="text-xs text-gray-400">👁️ {views} lượt xem</p>
+
+        <button
+          onClick={handleView}
+          className="mt-2 w-full px-4 py-1.5 text-sm font-medium text-gray-700 dark:text-white bg-white dark:bg-transparent border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm hover:bg-blue-100 dark:hover:bg-blue-600 hover:text-blue-800 dark:hover:text-white transition-colors duration-200"
+        >
+          View Details
+        </button>
+
+        <button className="w-full mt-2 px-4 py-1.5 text-sm font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+          Đăng ký ngay
+        </button>
+      </div>
     </div>
   );
 }
