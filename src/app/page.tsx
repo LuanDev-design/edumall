@@ -34,7 +34,7 @@ export default function HomePage() {
 
       {/* 🎨 Banner dưới Header */}
       <Banner />
-
+      <SuggestedProducts onSelectProduct={(product) => setSelectedProduct(product)} />
       <main className="px-6 py-10 grid grid-cols-1 md:grid-cols-5 gap-6">
         <SidebarFilter priceFilter={priceFilter} setPriceFilter={setPriceFilter} />
 
@@ -63,10 +63,17 @@ export default function HomePage() {
       {selectedProduct && (
         <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
       )}
-         <SuggestedProducts onSelectProduct={(product) => setSelectedProduct(product)} />
 
+      <div className="text-center mt-6">
+        <button
+          onClick={() =>
+            document.getElementById("suggest-section")?.scrollIntoView({ behavior: "smooth" })
+          }
+          className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+        >
+          🎯 Xem sản phẩm gợi ý
+        </button>
+      </div>
     </div>
-
-    
   );
 }
