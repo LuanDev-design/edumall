@@ -47,7 +47,7 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
   };
 
   return (
-    <div className="relative w-full bg-white dark:bg-neutral-800 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 hover:border-blue-500 border border-transparent transition-all duration-300">
+    <div className="relative w-full bg-white dark:bg-neutral-800 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 hover:border-blue-500 border border-indigo-200 transition-all duration-300">
       <div className="relative w-full h-40">
         <Image
           src={product.image}

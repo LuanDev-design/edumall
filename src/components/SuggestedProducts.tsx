@@ -34,7 +34,7 @@ export default function SuggestedProducts({ onSelectProduct }: SuggestedProducts
 
 
   return (
-    <div id="suggest-section" className="px-6 pb-20">
+    <div id="suggest-section" className="px-6 pb-20  ">
 
       {/* Gợi ý luôn hiển thị */}
       <div ref={sectionRef} className="mt-10">

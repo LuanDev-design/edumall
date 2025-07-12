@@ -10,7 +10,6 @@ import ProductCard from "@/components/ProductCard";
 import Banner from "@/components/Banner";
 import SuggestedProducts from "@/components/SuggestedProducts";
 
-
 export default function HomePage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -35,7 +34,7 @@ export default function HomePage() {
       {/* 🎨 Banner dưới Header */}
       <Banner />
       <SuggestedProducts onSelectProduct={(product) => setSelectedProduct(product)} />
-      <main className="px-6 py-10 grid grid-cols-1 md:grid-cols-5 gap-6">
+      <main className="px-6 py-10 grid grid-cols-1 md:grid-cols-5 gap-6"> 
         <SidebarFilter priceFilter={priceFilter} setPriceFilter={setPriceFilter} />
 
         <section className="md:col-span-4">
@@ -46,7 +45,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredProducts.map((product) => (
               <ProductCard
-                key={product.id}
+                key={product.id}  
                 product={product}
                 onClick={() => setSelectedProduct(product)}
               />
