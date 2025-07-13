@@ -7,4 +7,5 @@ export interface Product {
   image: string;
   rating: number;
   views?: number; // thêm thuộc tính này
+  category: string;
 }
