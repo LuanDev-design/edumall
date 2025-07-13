@@ -37,7 +37,7 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
 
   const handleView = () => {
     const viewed = JSON.parse(localStorage.getItem("viewedProducts") || "[]");
-    if (!viewed.includes(product.id)) { 
+    if (!viewed.includes(product.id)) {
       viewed.push(product.id);
       localStorage.setItem("viewedProducts", JSON.stringify(viewed));
     }
@@ -52,13 +52,14 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
 
   return (
     <>
-      <div className="relative w-full bg-white dark:bg-neutral-800 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 hover:border-blue-500 border border-indigo-200 transition-all duration-300">
+      <div className="relative w-full bg-white dark:bg-neutral-800 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 hover:border-purple-500 border-2 border-blue-400 transition-all duration-300">
         <div className="relative w-full h-40">
           <Image
             src={product.image}
             alt={product.name}
             fill
-            className="object-cover rounded-t-lg"
+            className="object-cover rounded-t-lg cursor-pointer"
+            onClick={handleView}
           />
           <button
             onClick={toggleLike}
