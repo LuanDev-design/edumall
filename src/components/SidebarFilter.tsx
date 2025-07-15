@@ -18,7 +18,7 @@ export default function SidebarFilter({
 }: Props) {
   const [openMobile, setOpenMobile] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
-  const categories = ["All", "IT", "English", "Soft Skills"];
+  const categories = ["All", "IT", "English", "Soft Skills","Books"];
 
   // 👂 Đóng khi click ra ngoài sidebar (mobile only)
   useEffect(() => {

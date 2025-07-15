@@ -123,4 +123,60 @@ export const mockProducts: Product[] = [
     rating: 4.6,
     category: "IT",
   },
+  {
+  id: 13,
+  name: "Tư Duy Nhanh Và Chậm",
+  description: "Cuốn sách kinh điển về tâm lý học hành vi.",
+  longDescription:
+    "Tác giả Daniel Kahneman – người đoạt giải Nobel – giúp bạn hiểu rõ hai hệ thống tư duy: một nhanh, một chậm. Sách lý giải vì sao con người dễ mắc sai lầm trong phán đoán và cách cải thiện nó.",
+  price: "179.000₫",
+  image: "/images/tu-duy-nhanh-va-cham.jpg",
+  rating: 4.9,
+  category: "Books",
+},
+{
+  id: 14,
+  name: "Đắc Nhân Tâm",
+  description: "Bí quyết giao tiếp đỉnh cao, bán chạy mọi thời đại.",
+  longDescription:
+    "Cuốn sách dạy bạn cách ứng xử, thuyết phục người khác và xây dựng mối quan hệ tốt đẹp trong công việc cũng như cuộc sống. Một 'sách gối đầu giường' cho bất kỳ ai muốn thành công.",
+  price: "89.000₫",
+  image: "/images/dac-nhan-tam.jpg",
+  rating: 4.8,
+  category: "Books",
+},
+{
+  id: 15,
+  name: "Thiên Tài Bên Trái, Kẻ Điên Bên Phải",
+  description: "Hành trình tâm lý học cực sốc và hấp dẫn.",
+  longDescription:
+    "Tác phẩm đặc biệt từ Trung Quốc, khám phá những bệnh nhân tâm thần dưới góc nhìn của bác sĩ. Mỗi chương là một câu chuyện gây sốc, đầy tính triết lý và suy ngẫm về bản chất con người.",
+  price: "145.000₫",
+  image: "/images/thien-tai-ben-trai.jpg",
+  rating: 4.6,
+  category: "Books",
+},
+{
+  id: 16,
+  name: "Một Cuốn Sách Về Chủ Nghĩa Tối Giản",
+  description: "Sống đơn giản để hạnh phúc hơn.",
+  longDescription:
+    "Giúp bạn hiểu và thực hành lối sống tối giản để giảm stress, tập trung vào giá trị thực sự và sống ý nghĩa hơn. Phù hợp cho người bận rộn, mệt mỏi với cuộc sống hiện đại.",
+  price: "99.000₫",
+  image: "/images/toi-gian.jpg",
+  rating: 4.5,
+  category: "Books",
+},
+{
+  id: 17,
+  name: "Tuổi Trẻ Đáng Giá Bao Nhiêu",
+  description: "Những lời khuyên truyền cảm hứng cho người trẻ.",
+  longDescription:
+    "Cuốn sách như người bạn đồng hành, giúp bạn vượt qua hoang mang, lạc hướng và khám phá bản thân. Phù hợp với học sinh, sinh viên và người đi làm đang tìm kiếm động lực.",
+  price: "85.000₫",
+  image: "/images/tuoi-tre.jpg",
+  rating: 4.7,
+  category: "Books",
+}
+
 ];

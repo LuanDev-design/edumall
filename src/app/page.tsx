@@ -41,7 +41,7 @@ export default function HomePage() {
 
       {/* 🔥 Sản phẩm gợi ý */}
       <SuggestedProducts onSelectProduct={(product) => setSelectedProduct(product)} />
-      <ChatBot />
+         <ChatBot />
 
       <main className="px-4 md:px-6 py-10 grid grid-cols-1 md:grid-cols-5 gap-6">
         <SidebarFilter

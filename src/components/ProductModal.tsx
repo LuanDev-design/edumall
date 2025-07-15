@@ -32,7 +32,7 @@ export default function ProductModal({ product, onClose }: Props) {
         ref={modalRef}
         className="bg-white dark:bg-neutral-900 rounded-xl shadow-xl w-full max-w-xl relative overflow-hidden animate-fade-in"
       >
-        {/* Close button */}
+        {/* Nút đóng */}
         <button
           onClick={onClose}
           className="absolute top-3 right-3 text-gray-600 hover:text-black dark:hover:text-white text-2xl"
@@ -41,7 +41,7 @@ export default function ProductModal({ product, onClose }: Props) {
           <IoClose />
         </button>
 
-        {/* Image */}
+        {/* Hình ảnh sản phẩm */}
         <div className="w-full h-48 sm:h-64 relative">
           <Image
             src={product.image}
@@ -52,7 +52,7 @@ export default function ProductModal({ product, onClose }: Props) {
           />
         </div>
 
-        {/* Content */}
+        {/* Nội dung */}
         <div className="p-4 sm:p-6 space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
             <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
@@ -72,12 +72,21 @@ export default function ProductModal({ product, onClose }: Props) {
             <span className="text-lg sm:text-xl text-blue-600 font-semibold">
               {product.price}
             </span>
-            <button
-              onClick={onClose}
-              className="px-4 py-2 text-sm font-medium bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-            >
-              Đóng
-            </button>
+
+            <div className="flex gap-2">
+              <button
+                onClick={onClose}
+                className="px-4 py-2 text-sm font-medium bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+              >
+                Đóng
+              </button>
+
+              <button
+                className="px-4 py-2 text-sm font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+              >
+                Đăng ký ngay
+              </button>
+            </div>
           </div>
         </div>
       </div>

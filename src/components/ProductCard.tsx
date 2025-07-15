@@ -92,7 +92,7 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
             onClick={handleView}
             className="mt-2 w-full px-4 py-1.5 text-sm font-medium text-gray-700 dark:text-white bg-white dark:bg-transparent border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm hover:bg-blue-100 dark:hover:bg-blue-600 hover:text-blue-800 dark:hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
-            View Details
+           Xem chi tiết
           </button>
 
           <button className="w-full mt-2 px-4 py-1.5 text-sm font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400">
