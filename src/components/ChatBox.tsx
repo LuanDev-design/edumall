@@ -66,7 +66,7 @@ return (
         {!open && (
           <button
             onClick={() => setOpen(true)}
-            className="w-14 h-14 bg-blue-600 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 transition sm:w-16 sm:h-16"
+            className="w-14 h-14 bg-blue-600  dark:text-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 transition sm:w-16 sm:h-16"
             aria-label="Mở chatbot"
           >
             <FaRobot size={24} />
@@ -99,7 +99,7 @@ return (
                   key={i}
                   className={`px-3 py-2 rounded-lg max-w-[80%] ${
                     msg.from === "user"
-                      ? "bg-blue-600 text-white ml-auto"
+                      ? "bg-blue-600 dark:text-white ml-auto"
                       : "bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white"
                   }`}
                 >
@@ -115,7 +115,7 @@ return (
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                className="flex-1 px-3 py-2 rounded-md text-sm border dark:bg-neutral-800 dark:text-white"
+                className="flex-1 px-3 py-2 rounded-md text-sm border dark:bg-neutral-800 text-gray-800 dark:text-white"
                 placeholder="Bạn muốn học gì?"
               />
               <button

@@ -5,6 +5,7 @@ import { Product } from "@/types/product";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import toast from "react-hot-toast";              // 👈 thêm dòng này
 
 interface Props {
   product: Product;
@@ -14,7 +15,7 @@ interface Props {
 export default function ProductModal({ product, onClose }: Props) {
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // ✅ Đóng modal khi click bên ngoài
+  // Đóng modal khi click ra ngoài
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
@@ -26,8 +27,16 @@ export default function ProductModal({ product, onClose }: Props) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [onClose]);
 
+  // 👉 Hàm xử lý nút “Đăng ký ngay”
+  const handleRegister = () => {
+    toast.success("Đăng ký thành công! 🎉", {
+      duration: 2500,   // 2,5 giây; đủ để người dùng thấy
+    });
+    onClose();          // đóng modal ngay sau khi gọi toast
+  };
+
   return (
-    <div className="fixed inset-0 z-50 bg-black bg-opacity-40 flex items-center justify-center px-4 sm:px-6">
+    <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center px-4 sm:px-6">
       <div
         ref={modalRef}
         className="bg-white dark:bg-neutral-900 rounded-xl shadow-xl w-full max-w-xl relative overflow-hidden animate-fade-in"
@@ -82,6 +91,7 @@ export default function ProductModal({ product, onClose }: Props) {
               </button>
 
               <button
+                onClick={handleRegister}      // 👈 gán handler mới
                 className="px-4 py-2 text-sm font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
               >
                 Đăng ký ngay

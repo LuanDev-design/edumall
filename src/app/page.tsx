@@ -11,6 +11,7 @@ import ProductCard from "@/components/ProductCard";
 import Banner from "@/components/Banner";
 import SuggestedProducts from "@/components/SuggestedProducts";
 import ChatBot from "@/components/ChatBox";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -90,6 +91,7 @@ export default function HomePage() {
           🌟 Xem sản phẩm gợi ý
         </button>
       </div>
+      <Footer/>
     </div>
   );
 }
