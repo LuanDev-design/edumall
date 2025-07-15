@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Product } from "@/types/product";
 import ProductCard from "./ProductCard";
+import ProductCardSkeleton from "./ProductCardSkeleton";
 
 interface SuggestedProductsProps {
   onSelectProduct: (product: Product) => void;
@@ -38,23 +39,21 @@ export default function SuggestedProducts({ onSelectProduct }: SuggestedProducts
 
       {/* Skeleton loading */}
       {loading && (
-        <div className="flex gap-4 overflow-x-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-6">
           {Array.from({ length: 4 }).map((_, i) => (
-            <div
-              key={i}
-              className="w-64 h-64 bg-gray-200 dark:bg-neutral-700 animate-pulse rounded-lg flex-shrink-0"
-            />
+            <ProductCardSkeleton key={i} />
           ))}
         </div>
       )}
 
+      {/* Không có dữ liệu */}
       {!loading && products.length === 0 && (
         <p className="text-center text-gray-500 dark:text-gray-400">
           Chưa có gợi ý nào dựa trên hành vi của bạn.
         </p>
       )}
 
-      {/* GRID (tablet/desktop) + CAROUSEL (mobile) */}
+      {/* Dữ liệu hiển thị */}
       {!loading && products.length > 0 && (
         <div>
           {/* Mobile carousel */}
@@ -66,7 +65,7 @@ export default function SuggestedProducts({ onSelectProduct }: SuggestedProducts
             ))}
           </div>
 
-          {/* Grid for ≥640px */}
+          {/* Grid cho tablet/desktop */}
           <div className="hidden sm:grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
             {products.map((p) => (
               <ProductCard key={p.id} product={p} onClick={() => onSelectProduct(p)} />

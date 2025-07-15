@@ -10,6 +10,7 @@ import SidebarFilter from "@/components/SidebarFilter";
 import ProductCard from "@/components/ProductCard";
 import Banner from "@/components/Banner";
 import SuggestedProducts from "@/components/SuggestedProducts";
+import ChatBot from "@/components/ChatBox";
 
 export default function HomePage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -40,6 +41,7 @@ export default function HomePage() {
 
       {/* 🔥 Sản phẩm gợi ý */}
       <SuggestedProducts onSelectProduct={(product) => setSelectedProduct(product)} />
+      <ChatBot />
 
       <main className="px-4 md:px-6 py-10 grid grid-cols-1 md:grid-cols-5 gap-6">
         <SidebarFilter
